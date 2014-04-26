@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+var download = require('./download');
+var d = new download();
+
 var app = express();
 
 app.use(bodyParser());
@@ -10,7 +13,9 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
-  	res.send(req.param('url'));
+  	d.url(req.param('url'), function (hex) {
+  		res.send(hex);
+  	});
 });
 
 app.listen(3000);
