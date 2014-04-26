@@ -4,10 +4,15 @@
   "description": "Crop yellow line from joyreactor images",
   "main": "crop.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "gm": "*"
+    "gm": "*",
+    "request": "*",
+    "express": "*",
+    "body-parser": "*",
+    "nodemon": "*"
   },
   "devDependencies": {
     
