@@ -6,6 +6,8 @@ var gm = require('gm');
 
 var imageMagick = gm.subClass({ imageMagick: true });
 
+// joyreactor: 14
+// failblog: 21
 
 Crop.prototype.img = function (image, callback) {
 
