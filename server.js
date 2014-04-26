@@ -4,6 +4,9 @@ var bodyParser = require('body-parser');
 var download = require('./download');
 var d = new download();
 
+var crop = require('./crop');
+var c = new crop();
+
 var app = express();
 
 app.use(bodyParser());
@@ -23,11 +26,10 @@ app.get('/', function(req, res){
 
 app.post('/', function(req, res){
   	d.url(req.param('url'), function (hex) {
-
-  		// res.send(hex);
-
-  		res.type('jpg');
-  		res.sendfile('images/' + hex);
+  		c.img('images/' + hex, function (image) {
+  			res.type('jpg');
+  			res.sendfile(image);
+  		})
   	});
 });
 
