@@ -1,0 +1,15 @@
+{
+  "name": "unjoyreactor",
+  "version": "0.0.0",
+  "description": "Crop yellow line from joyreactor images",
+  "main": "crop.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "gm": "*"
+  },
+  "devDependencies": {
+    
+  }
+}
