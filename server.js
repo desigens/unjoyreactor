@@ -25,6 +25,11 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
+
+	if (!req.param('url')) {
+		res.send(404);
+	}
+
   	d.url(req.param('url'), function (hex) {
   		c.img('images/' + hex, function (image) {
   			res.type('jpg');
