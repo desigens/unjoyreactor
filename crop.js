@@ -4,6 +4,12 @@ var Crop = function () {
 
 var gm = require('gm');
 
+// While fix is not implemented: https://github.com/aheckmann/gm/pull/275
+gm.prototype.repage = function repage (width, height, xoff, yoff, arg) {
+	if (arguments[0] === "+") return this.out("+repage");
+	return this.out("-repage", width+'x'+height+'+'+xoff+'+'+yoff+(arg||''));
+}
+
 var imageMagick = gm.subClass({ imageMagick: true });
 
 // joyreactor: 14
